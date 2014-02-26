@@ -4,17 +4,20 @@
  * and up in order to compile.
  * 26/02/2014
  */
- 
- typedef enum {
-     MOTO_X = 0,
-     GALAXY_NOTE_3,
-     GALAXY_S_5,
-     LG_G_2,
-     BLACKBERRY_Z_30,
-     //bleh
-     IPHONE,
-     phone_enum_t_SIZE
- } phone_enum_t;
+#include <imagination>
+#include <basiclogicio>
+#include <pseudocppinterpret.h>
+
+typedef enum {
+    MOTO_X = 0,
+    GALAXY_NOTE_3,
+    GALAXY_S_5,
+    LG_G_2,
+    BLACKBERRY_Z_30,
+    //bleh
+    IPHONE,
+    phone_enum_t_SIZE
+} phone_enum_t;
  
  
 smartphone_t pick(person_t tao, events_t events)
