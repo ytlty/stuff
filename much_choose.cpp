@@ -1,5 +1,7 @@
 /* Pseudo code for buying a new smartphone
  * Opensource by Taoling Yang, version 1.0
+ * NOTE: there are no classes supplied with this, please using imagination drivers v4.0
+ * and up in order to compile.
  * 26/02/2014
  */
  
