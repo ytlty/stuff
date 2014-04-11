@@ -40,38 +40,38 @@ smartphone_t pick(person_t tao, events_t events)
         return phone;
     }
     int points[phone_enum_t_SIZE];
-    for (int i = 0; i < events.size; i++) {
-        switch (events.names[i]) {
+    for (int i = 0; i < events.size(); i++) {
+        switch (events[i].names()) {
             case PRICE_DROP: 
-                points[events.happenedTo[i]] += events.value[i] / 10 + 1;
+                points[events[i].happenedTo()] += events[i].value() / 10 + 1;
                 break;
             case NEW_RELEASE:
                 // whichever product line
-                points[events.happenedTo[i]] += 5;
+                points[events[i].happenedTo()] += 5;
                 break;
             case MOAR_ANDROID_SUPPORT:
-                if (events.extra[i] == "added pebble support") {
+                if (events[i].extra() == "added pebble support") {
                     points[BLACKBERRY_Z_30] += 100;
                 } else {
                     points[BLACKBERRY_Z_30] += 10;
                 }
                 break;
             case CARRIER_HAS_GOOD_PLAN:
-                if (events.extra[i] == "rogers") {
+                if (events[i].extra() == "rogers") {
                     points[LG_G_2] += 10;
                     points[GALAXY_NOTE_3] += 10;
                     points[GALAXY_S_3] += 10;
                     points[IPHONE] += 10;
                     phone.carrier = "rogers";
-                } else if (events.extra[i] == "fido") {
+                } else if (events[i].extra() == "fido") {
                     points[MOTO_X] += 20;
                     points[GALAXY_S_5] += 100;
                 }
                 break;
             case WIND_IMPROVES_NETWORK:
-                if (events.extra[i] == "added lte") {
+                if (events[i].extra() == "added lte") {
                     points[GALAXY_NOTE_3] += 50;
-                } else if (events.extra[i] == "added lte and improved coverage to my house") {
+                } else if (events[i].extra() == "added lte and improved coverage to my house") {
                     points[GALAXY_NOTE_3] += 100;
                 }
                 break;
